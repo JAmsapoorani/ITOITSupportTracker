@@ -1,4 +1,4 @@
-package com.ITOTracker.ITOITSupportTracker.DAO;
+package com.ITOTracker.ITOITSupportTracker.entity;
 
 import com.ITOTracker.ITOITSupportTracker.entity.Category;
 import com.ITOTracker.ITOITSupportTracker.entity.User;

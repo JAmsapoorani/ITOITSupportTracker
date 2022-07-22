@@ -1,20 +1,17 @@
 package com.ITOTracker.ITOITSupportTracker.controller;
 
-import com.ITOTracker.ITOITSupportTracker.DAO.CreateTicket;
-import com.ITOTracker.ITOITSupportTracker.DAO.ITViewTicket;
-import com.ITOTracker.ITOITSupportTracker.DAO.ViewTicket;
-import com.ITOTracker.ITOITSupportTracker.DAO.ViewTicketList;
+import com.ITOTracker.ITOITSupportTracker.entity.CreateTicket;
+import com.ITOTracker.ITOITSupportTracker.entity.ITViewTicket;
+import com.ITOTracker.ITOITSupportTracker.entity.ViewTicket;
+import com.ITOTracker.ITOITSupportTracker.entity.ViewTicketList;
 import com.ITOTracker.ITOITSupportTracker.entity.Admin_team;
 import com.ITOTracker.ITOITSupportTracker.entity.Comment;
-import com.ITOTracker.ITOITSupportTracker.entity.Status;
 import com.ITOTracker.ITOITSupportTracker.exception.ResourceNotFoundException;
 import com.ITOTracker.ITOITSupportTracker.repository.*;
 import com.ITOTracker.ITOITSupportTracker.service.ITTeamModuleService;
-import com.ITOTracker.ITOITSupportTracker.service.UserModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -104,7 +101,7 @@ public class ITTeamModuleController {
         }
         return new ResourceNotFoundException("ticket_id and user_id not correct", "Missing Data Exception") + "";
     }
-    /*
+    /* view Ticket
     	IT Team Member can fetch the ticket using Ticket ID
 	Return Complete Information For that ticket and list all the communication in that ticket.
 	Communication message List contain

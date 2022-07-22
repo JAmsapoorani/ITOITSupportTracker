@@ -1,4 +1,4 @@
-package com.ITOTracker.ITOITSupportTracker.DAO;
+package com.ITOTracker.ITOITSupportTracker.entity;
 
 import com.ITOTracker.ITOITSupportTracker.entity.Tickets;
 import com.ITOTracker.ITOITSupportTracker.entity.User;
@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="Comment")
 @NoArgsConstructor
-public class CommentDAO {
+public class CommentModule {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer comment_id;

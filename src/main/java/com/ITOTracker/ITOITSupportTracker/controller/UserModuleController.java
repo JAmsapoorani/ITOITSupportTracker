@@ -1,18 +1,14 @@
 package com.ITOTracker.ITOITSupportTracker.controller;
 
-import com.ITOTracker.ITOITSupportTracker.DAO.CreateTicket;
-import com.ITOTracker.ITOITSupportTracker.DAO.ViewTicket;
-import com.ITOTracker.ITOITSupportTracker.DAO.ViewTicketList;
+import com.ITOTracker.ITOITSupportTracker.entity.CreateTicket;
+import com.ITOTracker.ITOITSupportTracker.entity.ViewTicket;
+import com.ITOTracker.ITOITSupportTracker.entity.ViewTicketList;
 import com.ITOTracker.ITOITSupportTracker.entity.Comment;
 import com.ITOTracker.ITOITSupportTracker.exception.ResourceNotFoundException;
 import com.ITOTracker.ITOITSupportTracker.repository.*;
-
-
 import com.ITOTracker.ITOITSupportTracker.service.UserModuleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -47,7 +43,9 @@ public class UserModuleController {
         userResponseModel1.setSub_category_id(createTicket.getSub_category_id());
         userResponseModel1.setSubjects(createTicket.getSubjects());
         userResponseModel1.setStatus_id(201);
-        userResponseModel1.setDescription(createTicket.getDescription());
+       userResponseModel1.setDescription(createTicket.getDescription());
+        System.out.println(LocalDateTime.now());
+        //userResponseModel1.setAssignee_Id(createTicket.getAssignee_Id());
         userResponseModel1.setCreate_datetime(LocalDateTime.now());
         this.ticketsCreateRepository.save(userResponseModel1);
         return "Ticket created Successfully " +  userResponseModel1.getTicket_id() + " " + url;
@@ -99,6 +97,8 @@ public List<ViewTicketList> ViewByUserId( @RequestParam Integer user_id) {
     }
 return viewTicketList;
 }
+
+
 /*
 •	Comment on Ticket.
 send user id and ticket id request param

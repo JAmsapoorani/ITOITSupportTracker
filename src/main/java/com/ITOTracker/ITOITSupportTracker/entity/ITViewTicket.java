@@ -1,4 +1,4 @@
-package com.ITOTracker.ITOITSupportTracker.DAO;
+package com.ITOTracker.ITOITSupportTracker.entity;
 
 import lombok.NoArgsConstructor;
 

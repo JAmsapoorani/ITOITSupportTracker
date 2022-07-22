@@ -1,8 +1,8 @@
 package com.ITOTracker.ITOITSupportTracker.service;
 
-import com.ITOTracker.ITOITSupportTracker.DAO.CreateTicket;
-import com.ITOTracker.ITOITSupportTracker.DAO.ViewTicket;
-import com.ITOTracker.ITOITSupportTracker.DAO.ViewTicketList;
+import com.ITOTracker.ITOITSupportTracker.entity.CreateTicket;
+import com.ITOTracker.ITOITSupportTracker.entity.ViewTicket;
+import com.ITOTracker.ITOITSupportTracker.entity.ViewTicketList;
 import com.ITOTracker.ITOITSupportTracker.entity.*;
 import com.ITOTracker.ITOITSupportTracker.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,21 +51,14 @@ private UserRepository userRepository;
        System.out.println(createTicketList);
        for (CreateTicket createTicket : createTicketList) {
            ViewTicket viewTicket = new ViewTicket();
-               System.out.println(createTicket.getTicket_id());
                viewTicket.setTicket_id(createTicket.getTicket_id());
-               System.out.println(createTicket.getAssignee_Id());
                viewTicket.setAssignee_Id(createTicket.getAssignee_Id());
-               System.out.println(createTicket.getSubjects());
                viewTicket.setSubjects(createTicket.getSubjects());
-           System.out.println(createTicket.getDescription());
                viewTicket.setDescription(createTicket.getDescription());
-           System.out.println(createTicket.getUrl_link());
                viewTicket.setUrl_link(createTicket.getUrl_link());
-           System.out.println(createTicket.getCategory_id());
                viewTicket.setCategory(findByCategoryId(createTicket.getCategory_id()));
                viewTicket.setSub_category(findBySubCayegoryId(createTicket.getSub_category_id()));
                viewTicket.setPriority(findByPriorityId(createTicket.getPriority_id()));
-           System.out.println(createTicket.getStatus_id());
                viewTicket.setStatus(findByStatusId(createTicket.getStatus_id()));
                viewALLRepository.save(viewTicket);
                viewTicketList.add(viewTicket);
@@ -82,11 +75,8 @@ private ViewTicketListRepository viewTicketListRepository;
         System.out.println(createTicketList);
         for (CreateTicket createTicket : createTicketList) {
             ViewTicketList viewTicket = new ViewTicketList();
-            System.out.println(createTicket.getTicket_id());
             viewTicket.setTicket_id(createTicket.getTicket_id());
-            System.out.println(createTicket.getAssignee_Id());
             viewTicket.setAssignee_Id(createTicket.getAssignee_Id());
-            System.out.println(createTicket.getSubjects());
             viewTicket.setSubjects(createTicket.getSubjects());
             viewTicket.setUrl_link(createTicket.getUrl_link());
             viewTicket.setCategory_desc(findByCategoryId(createTicket.getCategory_id()).getCategory_desc());
@@ -107,11 +97,8 @@ private ViewTicketListRepository viewTicketListRepository;
         for (CreateTicket createTicket : createTicketList) {
             ViewTicketList viewTicket = new ViewTicketList();
                 if (user_id == createTicket.getUser_id()) {
-                    System.out.println(createTicket.getTicket_id());
                     viewTicket.setTicket_id(createTicket.getTicket_id());
-                    System.out.println(createTicket.getAssignee_Id());
                     viewTicket.setAssignee_Id(createTicket.getAssignee_Id());
-                    System.out.println(createTicket.getSubjects());
                     viewTicket.setSubjects(createTicket.getSubjects());
                     viewTicket.setUrl_link(createTicket.getUrl_link());
                     viewTicket.setCategory_desc(findByCategoryId(createTicket.getCategory_id()).getCategory_desc());
