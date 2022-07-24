@@ -36,16 +36,21 @@ public class UserModuleController {
         }
         CreateTicket userResponseModel1=new CreateTicket();
         userResponseModel1.setReported_id(user_id);
+        System.out.println(createTicket.getTicket_id());
         userResponseModel1.setTicket_id(createTicket.getTicket_id());
+        System.out.println(createTicket.getPriority_id());
         userResponseModel1.setPriority_id(createTicket.getPriority_id());
+        System.out.println(createTicket.getCategory_id());
         userResponseModel1.setCategory_id(createTicket.getCategory_id());
+        System.out.println(user_id);
         userResponseModel1.setUser_id(user_id);
+        System.out.println(createTicket.getSub_category_id());
         userResponseModel1.setSub_category_id(createTicket.getSub_category_id());
         userResponseModel1.setSubjects(createTicket.getSubjects());
         userResponseModel1.setStatus_id(201);
        userResponseModel1.setDescription(createTicket.getDescription());
         System.out.println(LocalDateTime.now());
-        //userResponseModel1.setAssignee_Id(createTicket.getAssignee_Id());
+       userResponseModel1.setAssignee_Id(createTicket.getAssignee_Id());
         userResponseModel1.setCreate_datetime(LocalDateTime.now());
         this.ticketsCreateRepository.save(userResponseModel1);
         return "Ticket created Successfully " +  userResponseModel1.getTicket_id() + " " + url;

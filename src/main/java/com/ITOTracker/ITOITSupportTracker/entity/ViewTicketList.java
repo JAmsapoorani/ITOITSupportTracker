@@ -10,6 +10,7 @@ import java.io.Serializable;
 @Table(name="viewticket")
 public class ViewTicketList  {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private  Integer ticket_id;
     private String category_desc;
     private  String sub_category_desc;

@@ -14,7 +14,8 @@ import java.util.Optional;
 @Table(name="viewticket")
 @NoArgsConstructor
 public class ViewTicket  {
-@Id
+    @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer ticket_id;
     private  Integer assignee_Id;
     private String subjects ;

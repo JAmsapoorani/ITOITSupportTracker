@@ -1,5 +1,6 @@
 package com.ITOTracker.ITOITSupportTracker.entity;
 
+
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
